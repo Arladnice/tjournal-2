@@ -1,0 +1,35 @@
+.root {
+    display: flex;
+    align-items: center;
+    background-color: #fff4e2 !important;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.searchBlock {
+    svg {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        opacity: 0.3;
+    }
+    position: relative;
+    display: flex;
+    input {
+        width: 240px;
+        height: 38px;
+        border: 0;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.05);
+        font-size: 16px;
+        padding-left: 40px;
+        transition: all ease-in-out 0.1s;
+        border: 1px transparent;
+    }
+    :hover,
+    :focus {
+        background-color: #fff;
+        border-color: darken(#fff4e2, 15%);
+        box-shadow: 0 0 0 3px rgb(229 160 64 / 12%);
+    }
+}
