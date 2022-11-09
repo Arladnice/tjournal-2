@@ -1,16 +1,19 @@
-import { IconButton, Paper, Avatar, Link, Button } from "@material-ui/core";
 import React from "react";
-
+import { Paper, Button, IconButton, Avatar } from "@material-ui/core";
 import {
-    Menu as MenuIcon,
     SearchOutlined as SearchIcon,
+    CreateOutlined as PenIcon,
     SmsOutlined as MessageIcon,
+    Menu as MenuIcon,
+    ExpandMoreOutlined as ArrowBottom,
     NotificationsNoneOutlined as NotificationIcon,
 } from "@material-ui/icons";
+
 import styles from "./Header.module.scss";
+import Link from "next/link";
 import Image from "next/image";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
     return (
         <Paper classes={{ root: styles.root }} elevation={0}>
             <div className="d-flex align-center">
@@ -18,31 +21,23 @@ const Header: React.FC = () => {
                     <MenuIcon />
                 </IconButton>
                 <Link href="/">
-                    <a>
-                        <Image
-                            width={30}
-                            height={40}
-                            className="mr-25 ml-10"
-                            src="/static/img/logo.svg"
-                            alt="Logo"
-                        />
-                    </a>
+                    <Image
+                        height={35}
+                        width={35}
+                        className="mr-20"
+                        src="/static/img/logo.svg"
+                        alt="Logo"
+                    />
                 </Link>
 
                 <div className={styles.searchBlock}>
                     <SearchIcon />
                     <input placeholder="Поиск" />
                 </div>
-                <Link href="/write">
-                    <a>
-                        <Button
-                            variant="contained"
-                            className={styles.penButton}
-                        >
-                            Новая запись
-                        </Button>
-                    </a>
-                </Link>
+
+                <Button variant="contained" className={styles.penButton}>
+                    Новая запись
+                </Button>
             </div>
             <div className="d-flex align-center">
                 <IconButton>
@@ -51,10 +46,15 @@ const Header: React.FC = () => {
                 <IconButton>
                     <NotificationIcon />
                 </IconButton>
-                <Avatar src="https://sun9-81.userapi.com/impf/Bg63GCGgF7aQPwVllzOmz8CTWja2YxSHstccLg/RIqAQINMyDE.jpg?size=960x960&quality=96&sign=84f35c2a46c4f12ae71d761e3feeee45&type=album" />
+                <Link href="/profile/1" className="d-flex align-center">
+                    <Avatar
+                        className={styles.avatar}
+                        alt="Remy Sharp"
+                        src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"
+                    />
+                    <ArrowBottom />
+                </Link>
             </div>
         </Paper>
     );
 };
-
-export default Header;
