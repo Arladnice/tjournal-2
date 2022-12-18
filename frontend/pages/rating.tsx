@@ -10,8 +10,9 @@ import {
     Tab,
 } from "@material-ui/core";
 
+import FollowButton from "../components/FollowButton";
+
 import { MainLayout } from "../layouts/MainLayout";
-import { FollowButton } from "../components/FollowButton";
 
 export default function Rating() {
     return (
